@@ -474,6 +474,125 @@ export const translations = {
       protocol: 'Protocole',
     },
   },
+  
+  tupi: {
+    // Tela de boas-vindas
+    welcomeTitle: 'Mara\'ã peikũ peporandusara?',
+    welcomeSubtitle: 'Peiporavõ mara\'ã oikuaa porã pendéu',
+    
+    // Personas
+    personas: {
+      clementina: {
+        description: 'Pytũ-endy tuixawa-itá supé',
+      },
+      aruana: {
+        description: 'Tuixawa kunhã-itá supé',
+      },
+      mariana: {
+        description: 'Nheenga opakatu supé',
+      },
+      samuel: {
+        description: 'Akangaíma-itá supé',
+      },
+      aissatou: {
+        description: 'Ambue tetama suí-itá supé',
+      },
+      damiao: {
+        description: 'Nheenga mirĩ-itá supé',
+      },
+      julia: {
+        description: 'Akanga-íma-itá supé',
+      },
+      kadu: {
+        description: 'Pú-íma-itá supé',
+      },
+    },
+    
+    // Tela de serviço
+    serviceTitle: 'Mara\'ã reikũ?',
+    serviceSubtitle: 'Yandé yaipytyvõ indé',
+    rgTitle: 'RG',
+    rgDescription: 'Papera mokõi',
+    cpfTitle: 'CPF',
+    cpfDescription: 'Papera mokõi CPF',
+    
+    // Tela de documentos
+    documentsTitle: 'Papera-itá Tekotevẽ',
+    documentsSubtitle: 'Reikũ papera-itá kwá',
+    documentsFor: 'Remuakã',
+    documentsBring: 'reruri:',
+    doc1: 'Papera nasemento térã kasamento',
+    doc2: 'Papera uka',
+    doc3: 'Papera ymaguare',
+    doc3Suffix: 'ymaguare',
+    listenExplanation: 'Aendu nheenga',
+    haveDocuments: 'Aikũ papera-itá',
+    
+    // Tela de dados
+    dataTitle: 'Ne Nheenga',
+    dataSubtitle: 'Remoĩ ne nheenga',
+    fullName: 'Ne Rera Opakatu',
+    socialName: 'Ne Rera Ambue',
+    indigenousName: 'Ne Rera Tuixawa',
+    phone: 'Telefone',
+    continue: 'Resẽ',
+    
+    // Tela de foto
+    photoTitle: 'Ta\'anga',
+    photoSubtitle: 'Yaikũ ta\'anga ne suí',
+    photoInstruction: 'Reaé kamera-pe',
+    cameraArea: 'Kamera renda',
+    capturePhoto: 'Aipuru Ta\'anga',
+    
+    // Tela de pagamento
+    paymentTitle: 'Mara\'ã Remupaga',
+    paymentSubtitle: 'Reiporavõ mara\'ã remupaga',
+    pix: 'PIX',
+    card: 'Kartão',
+    boleto: 'Boleto',
+    
+    // Tela de protocolo
+    protocolTitle: 'Opaá!',
+    protocolSubtitle: 'Ne mba\'eapo oĩ porã',
+    allSet: 'Opaá porã!',
+    protocolGenerated: 'Ne papera oĩ',
+    protocolNumber: 'Papera papaũ:',
+    protocolSent: 'Yamondo papera ne WhatsApp-pe:',
+    finish: 'Opá',
+    
+    // Acessibilidade
+    accessibility: 'Ikatu Oikũ',
+    highContrast: 'Pytũ-Endy Tuixawa',
+    highContrastDesc: 'Omoatã pytũ-endy',
+    largeText: 'Nheenga Tuixawa',
+    largeTextDesc: 'Omoatã nheenga',
+    screenReader: 'Aendu Nheenga',
+    screenReaderDesc: 'Omoĩ nheenga',
+    vlibras: 'VLibras',
+    vlibrasDesc: 'Pú-nheenga',
+    reducedMotion: 'Omoĩ Kirirĩ',
+    reducedMotionDesc: 'Omoĩ kirirĩ',
+    dyslexiaFont: 'Nheenga Porã',
+    dyslexiaFontDesc: 'Nheenga oikuaa porã',
+    
+    // Idioma
+    language: 'Nheenga',
+    
+    // Botões
+    back: 'Aseú',
+    home: 'Uka',
+    close: 'Opytá',
+    
+    // Passos
+    steps: {
+      service: 'Mba\'eapo',
+      documents: 'Papera-itá',
+      data: 'Nheenga',
+      photo: 'Ta\'anga',
+      payment: 'Mupaga',
+      protocol: 'Papera',
+    },
+  },
 };
 
 export type Language = keyof typeof translations;

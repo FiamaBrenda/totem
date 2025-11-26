@@ -243,9 +243,9 @@ const Index = () => {
                 <div className="flex flex-col items-center text-center gap-6">
                   <IdCard className="w-24 h-24 text-primary" aria-hidden="true" />
                   <div>
-                    <h2 className="text-3xl font-bold text-foreground mb-2">RG</h2>
+                    <h2 className="text-3xl font-bold text-foreground mb-2">{t('rgTitle')}</h2>
                     <p className="text-lg text-muted-foreground">
-                      Segunda via do Registro Geral
+                      {t('rgDescription')}
                     </p>
                   </div>
                 </div>
@@ -267,9 +267,9 @@ const Index = () => {
                 <div className="flex flex-col items-center text-center gap-6">
                   <User className="w-24 h-24 text-secondary" aria-hidden="true" />
                   <div>
-                    <h2 className="text-3xl font-bold text-foreground mb-2">CPF</h2>
+                    <h2 className="text-3xl font-bold text-foreground mb-2">{t('cpfTitle')}</h2>
                     <p className="text-lg text-muted-foreground">
-                      Segunda via do Cadastro de Pessoa Física
+                      {t('cpfDescription')}
                     </p>
                   </div>
                 </div>
@@ -283,8 +283,8 @@ const Index = () => {
       {currentScreen === 'documents' && (
         <>
           <ScreenHeader
-            title="Documentos Necessários"
-            subtitle="Você vai precisar dos seguintes documentos"
+            title={t('documentsTitle')}
+            subtitle={t('documentsSubtitle')}
             onBack={handleBack}
             onHome={handleHome}
           />
@@ -297,20 +297,20 @@ const Index = () => {
                   <FileText className="w-8 h-8 text-primary mt-1" aria-hidden="true" />
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-foreground mb-4">
-                      Para emitir seu {totemState.serviceType === 'rg' ? 'RG' : 'CPF'}, traga:
+                      {t('documentsFor')} {totemState.serviceType === 'rg' ? 'RG' : 'CPF'}, {t('documentsBring')}
                     </h3>
                     <ul className="space-y-3 text-lg" role="list">
                       <li className="flex items-start gap-3">
                         <CheckCircle2 className="w-6 h-6 text-success mt-1 flex-shrink-0" aria-hidden="true" />
-                        <span>Certidão de nascimento ou casamento (original ou cópia autenticada)</span>
+                        <span>{t('doc1')}</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle2 className="w-6 h-6 text-success mt-1 flex-shrink-0" aria-hidden="true" />
-                        <span>Comprovante de residência atualizado</span>
+                        <span>{t('doc2')}</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle2 className="w-6 h-6 text-success mt-1 flex-shrink-0" aria-hidden="true" />
-                        <span>Documento anterior ({totemState.serviceType === 'rg' ? 'RG' : 'CPF'} antigo), se tiver</span>
+                        <span>{t('doc3')} ({totemState.serviceType === 'rg' ? 'RG' : 'CPF'} {t('doc3Suffix')})</span>
                       </li>
                     </ul>
                   </div>
@@ -321,11 +321,11 @@ const Index = () => {
                     variant="outline"
                     size="lg"
                     className="w-full gap-2 mt-6"
-                    aria-label="Ouvir explicação sobre os documentos necessários"
+                    aria-label={t('listenExplanation')}
                     onClick={explainDocuments}
                   >
                     <Volume2 className="w-5 h-5" aria-hidden="true" />
-                    <span>Ouvir explicação</span>
+                    <span>{t('listenExplanation')}</span>
                   </Button>
                 )}
               </Card>
@@ -336,7 +336,7 @@ const Index = () => {
                   onClick={() => setCurrentScreen('data')}
                   className="flex-1"
                 >
-                  Tenho os documentos
+                  {t('haveDocuments')}
                 </Button>
               </div>
             </div>
@@ -348,8 +348,8 @@ const Index = () => {
       {currentScreen === 'data' && (
         <>
           <ScreenHeader
-            title="Seus Dados"
-            subtitle="Preencha as informações abaixo"
+            title={t('dataTitle')}
+            subtitle={t('dataSubtitle')}
             onBack={handleBack}
             onHome={handleHome}
           />
@@ -367,7 +367,7 @@ const Index = () => {
                 >
                   <div>
                     <Label htmlFor="name" className="text-lg font-semibold">
-                      Nome Completo
+                      {t('fullName')}
                     </Label>
                     <Input
                       id="name"
@@ -387,7 +387,7 @@ const Index = () => {
 
                   <div>
                     <Label htmlFor="social-name" className="text-lg font-semibold">
-                      Nome Social (opcional)
+                      {t('socialName')}
                     </Label>
                     <Input
                       id="social-name"
@@ -406,7 +406,7 @@ const Index = () => {
                   {selectedPersona?.id === 'aruana' && (
                     <div>
                       <Label htmlFor="indigenous-name" className="text-lg font-semibold">
-                        Nome Indígena (opcional)
+                        {t('indigenousName')}
                       </Label>
                       <Input
                         id="indigenous-name"
@@ -446,7 +446,7 @@ const Index = () => {
 
                   <div>
                     <Label htmlFor="phone" className="text-lg font-semibold">
-                      Telefone / WhatsApp
+                      {t('phone')}
                     </Label>
                     <Input
                       id="phone"
@@ -466,7 +466,7 @@ const Index = () => {
                   </div>
 
                   <Button type="submit" size="lg" className="w-full">
-                    Continuar
+                    {t('continue')}
                   </Button>
                 </form>
               </Card>
@@ -479,8 +479,8 @@ const Index = () => {
       {currentScreen === 'photo' && (
         <>
           <ScreenHeader
-            title="Foto do Documento"
-            subtitle="Precisamos de uma foto sua"
+            title={t('photoTitle')}
+            subtitle={t('photoSubtitle')}
             onBack={handleBack}
             onHome={handleHome}
           />
@@ -492,17 +492,17 @@ const Index = () => {
                 <div className="flex flex-col items-center gap-6">
                   <Camera className="w-32 h-32 text-primary" aria-hidden="true" />
                   <p className="text-xl text-center text-muted-foreground">
-                    Olhe para a câmera e aguarde
+                    {t('photoInstruction')}
                   </p>
                   <div className="w-full max-w-md aspect-video bg-muted rounded-lg flex items-center justify-center">
-                    <span className="text-muted-foreground">Área da câmera</span>
+                    <span className="text-muted-foreground">{t('cameraArea')}</span>
                   </div>
                   <Button
                     size="lg"
                     onClick={() => setCurrentScreen('payment')}
                     className="w-full"
                   >
-                    Capturar Foto
+                    {t('capturePhoto')}
                   </Button>
                 </div>
               </Card>
@@ -515,8 +515,8 @@ const Index = () => {
       {currentScreen === 'payment' && (
         <>
           <ScreenHeader
-            title="Forma de Pagamento"
-            subtitle="Escolha como deseja pagar"
+            title={t('paymentTitle')}
+            subtitle={t('paymentSubtitle')}
             onBack={handleBack}
             onHome={handleHome}
           />
@@ -564,8 +564,8 @@ const Index = () => {
       {currentScreen === 'protocol' && (
         <>
           <ScreenHeader
-            title="Atendimento Concluído"
-            subtitle="Seu pedido foi registrado com sucesso"
+            title={t('protocolTitle')}
+            subtitle={t('protocolSubtitle')}
             onHome={handleHome}
             showBackButton={false}
           />
@@ -575,25 +575,25 @@ const Index = () => {
             <div className="max-w-3xl mx-auto">
               <Card className="p-12 text-center">
                 <CheckCircle2 className="w-24 h-24 text-success mx-auto mb-6" aria-hidden="true" />
-                <h2 className="text-4xl font-bold text-foreground mb-4">Tudo certo!</h2>
+                <h2 className="text-4xl font-bold text-foreground mb-4">{t('allSet')}</h2>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Seu protocolo foi gerado
+                  {t('protocolGenerated')}
                 </p>
                 
                 <div className="bg-muted p-8 rounded-lg mb-8">
-                  <p className="text-sm text-muted-foreground mb-2">Número do protocolo:</p>
+                  <p className="text-sm text-muted-foreground mb-2">{t('protocolNumber')}</p>
                   <p className="text-4xl font-mono font-bold text-foreground">
                     {Math.random().toString(36).substring(2, 10).toUpperCase()}
                   </p>
                 </div>
 
                 <p className="text-lg text-muted-foreground mb-6">
-                  Enviamos o protocolo para seu WhatsApp:{' '}
+                  {t('protocolSent')}{' '}
                   <strong>{totemState.userData.phone}</strong>
                 </p>
 
                 <Button size="lg" onClick={handleHome} className="w-full">
-                  Finalizar
+                  {t('finish')}
                 </Button>
               </Card>
             </div>

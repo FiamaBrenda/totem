@@ -17,6 +17,7 @@ export const LanguageSelector = ({ currentLanguage, onLanguageChange }: Language
     { code: 'en', label: 'English', flag: '🇺🇸' },
     { code: 'es', label: 'Español', flag: '🇪🇸' },
     { code: 'fr', label: 'Français', flag: '🇫🇷' },
+    { code: 'tupi', label: 'Tupi-Guarani', flag: '🪶' },
   ];
 
   const handleLanguageSelect = (code: Language) => {
